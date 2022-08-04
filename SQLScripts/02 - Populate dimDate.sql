@@ -2,7 +2,7 @@
 BEGIN TRAN 
 
 declare @startdate date = '2015-01-01',
-    @enddate date = '2022-12-31'
+    @enddate date = '2023-12-31'
 
 IF @startdate IS NULL
     BEGIN
