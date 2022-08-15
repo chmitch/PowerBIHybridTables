@@ -19,18 +19,18 @@ In this section we'll setup the Azure SQL Database.
 1. Navigate to the [Azure Portal](https://portal.azure.com) and login.
 1. Select "Create a resource". 
 
-    ![create a resource](images/01-createaresource.png)
+    ![create a resource](/Images/01-createaresource.png)
 1. In the search box type "sql azure" and press enter.
 
-    ![azure sql](images/02-search.png)
+    ![azure sql](/Images/02-search.png)
 
 1. Click "Create" for the Azure SQL Resource.
 
-    ![Azure SQL](images/03-azuresql.png)
+    ![Azure SQL](/Images/03-azuresql.png)
 
 1. Select the Resource Type "Single database" and click "Create"
 
-    ![single database](images/04-singledatabase.png)
+    ![single database](/Images/04-singledatabase.png)
 1. Enter and make note of the properties for:
     * Resource Group
     * Database Name
@@ -40,13 +40,13 @@ In this section we'll setup the Azure SQL Database.
 1. Click "Create".
 1. You'll be presented with a progress screen.
 
-    ![deployment in progress](images/05-deployment.png)
+    ![deployment in progress](/Images/05-deployment.png)
 1. Once the databse is done provisioning click "Go to Resource".
 
 ### Part 2 - Configure the Server firewall
 1. By default databases are not externally accessible.  Click "Set server firewall" to change access settings.
 
-    ![set firewall](images/06-setfirewall.png)
+    ![set firewall](/Images/06-setfirewall.png)
 1. Choose "Selected Networks"
 1. Click "Add your client IPv4 address..."
 1. Check "Allow Azure services and resource to access this server".
@@ -55,13 +55,13 @@ In this section we'll setup the Azure SQL Database.
 ### Part 3 - configure the database
 1. Navigate to the query editor.
 
-    ![query editor](images/07-queryeditor.png)
+    ![query editor](/Images/07-queryeditor.png)
 1. Provide your login credentials and click "OK".
 
-    ![login](images/08-login.png)
+    ![login](/Images/08-login.png)
 1. Copy the contents of 01 - Create AdventureWorksDW.sql from the scripts folder and click "Run".
 
-    ![run](images/09-run.png)
+    ![run](/Images/09-run.png)
 1. Repeat the last step for scripts 02 - Populate dimDate.sql and 03 - Shift FactInternetSalesDates.sql paying close attention to the instructions for the dates.  (Note: the script in its current form should work fine through the end of 2023, but will need attention in 2024).
 
 ## Power BI Setup
@@ -76,26 +76,26 @@ Now that the databse is properly configured, you can setup the Power BI Componen
 1. When prompted to provide data be sure to enter the ServerName and Database name that you used when configuring the sql server, and click "Load".
 1. You must also provide RangeStart and RangeEnd values.  Good values for this are 1/1/2021 and 1/1/2022 respectively.
 
-    ![Load](images/10-load.png)
+    ![Load](/Images/10-load.png)
 1. When promped enter your databse username and password and click "Connect".
 
-    ![Credentials](images/11-credentials.png)
+    ![Credentials](/Images/11-credentials.png)
 1. Data will now import from the source database.
 
-    ![Loading](images/12-loading.png)
+    ![Loading](/Images/12-loading.png)
 1. Once the data has loaded successfully, click "Transform Data" to setup a custom filter for incremental refresh.
 
-    ![Transform data](images/13-filter01.png)
+    ![Transform data](/Images/13-filter01.png)
 1. Find the FactInternetSales table's OrderDate column and add a custom filter.
 
-    ![Custom Filter](images/13-filter02.png)
+    ![Custom Filter](/Images/13-filter02.png)
 1. Set the filter to be "is after or equal to" the parameter "RangeStart" and "is before" the parameter "RangeEnd" and click "OK".
 
-    ![Filter Range](images/13-filter03.png)
+    ![Filter Range](/Images/13-filter03.png)
 1. Now that the range filter is applied, right click on "FactInternetSales" and select "Incremental Refresh".
 
-    ![Incremental Refresh](images/14-incrementalrefresh1.png)
+    ![Incremental Refresh](/Images/14-incrementalrefresh1.png)
 1. Setup an incremental refresh policy and click "Apply".
 
-    ![Incremental Refresh Policy](images/14-incrementalrefresh2.png)
+    ![Incremental Refresh Policy](/Images/14-incrementalrefresh2.png)
 1. Click deploy, and deploy the configured report to the Power BI workspace.
