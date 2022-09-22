@@ -62,7 +62,7 @@ In this section we'll setup the Azure SQL Database.
 1. Copy the contents of 01 - Create AdventureWorksDW.sql from the scripts folder and click "Run".
 
     ![run](/Images/09-run.png)
-1. Repeat the last step for scripts 02 - Populate dimDate.sql and 03 - Shift FactInternetSalesDates.sql paying close attention to the instructions for the dates.  (Note: the script in its current form should work fine through the end of 2023, but will need attention in 2024).
+1. Repeat the last step for scripts 02 - Populate dimDate.sql, 03 - Shift FactInternetSalesDates.sql, 04 - Cleanup Orders.sql paying close attention to the instructions for the dates.  (Note: the script in its current form should work fine through the end of 2023, but will need attention in 2024).
 
 ## Power BI Setup
 Now that the databse is properly configured, you can setup the Power BI Components.
